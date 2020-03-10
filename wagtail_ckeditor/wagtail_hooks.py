@@ -1,5 +1,5 @@
 from django.templatetags.static import static
-from django.utils.html import format_html
+from django.utils.html import format_html, format_html_join
 
 try:
     from wagtail.wagtailcore import hooks
@@ -13,7 +13,18 @@ from wagtail_ckeditor import settings
 
 @hooks.register('insert_editor_js')
 def ckeditorjs():
-    return format_html('<script src="{src}"></script>', src=static("wagtail_ckeditor/ckeditor/ckeditor.js"))
+    # js_assets = [
+    #     {'link': static("wagtail_ckeditor/ckeditor/ckeditor.js")},
+    #     {'link': static("wagtail_ckeditor/ckeditor/adapters/jquery.js")}
+    # ]
+    # print(format_html_join('\n', '<script src="{}"></script>', (jsa['link'] for jsa in js_assets)))
+    # return format_html_join('\n', '<script src="{}"></script>', (jsa['link'] for jsa in js_assets))
+
+    return '\n'.join([
+        format_html('<script src="{src}"></script>', src=static("wagtail_ckeditor/ckeditor/ckeditor.js")),
+        format_html('<script src="{src}"></script>', src=static("wagtail_ckeditor/ckeditor/adapters/jquery.js"))
+    ])
+    # return format_html('<script src="{src}"></script>', src=static("wagtail_ckeditor/ckeditor/ckeditor.js"))
 
 
 @hooks.register('construct_whitelister_element_rules')
