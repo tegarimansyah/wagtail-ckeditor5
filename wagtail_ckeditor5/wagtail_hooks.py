@@ -8,7 +8,7 @@ except ImportError:
     from wagtail.core import hooks
     from wagtail.core.whitelist import allow_without_attributes, check_url, attribute_rule
 
-from wagtail_ckeditor import settings
+from wagtail_ckeditor5 import settings
 
 
 @hooks.register('insert_editor_js')

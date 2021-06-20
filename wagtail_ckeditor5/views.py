@@ -1,5 +1,5 @@
 from django.views.generic.base import TemplateView
-from wagtail_ckeditor import settings
+from wagtail_ckeditor5 import settings
 
 
 class IndexView(TemplateView):

@@ -24,7 +24,7 @@ except ImportError:
 
     wagtail_version = 2
 
-from wagtail_ckeditor import settings
+from wagtail_ckeditor5 import settings
 
 
 # class BaseClass(object):
