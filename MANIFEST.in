@@ -1,0 +1,3 @@
+include readme.md
+recursive-include wagtail_ckeditor5/static *
+recursive-include wagtail_ckeditor5/templates *
