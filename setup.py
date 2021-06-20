@@ -6,5 +6,6 @@ setup(
    author='Martin Mastny',
    author_email='martin.mastny@vscht.cz',
    packages=['wagtail_ckeditor5'],
+   include_package_data=True,
    install_requires=['wagtail'],
 )
